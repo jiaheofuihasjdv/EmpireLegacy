@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire Legacy - Minecraft Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Minecraft:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-blocks">
+                        <div class="grass-block-3d block-left"></div>
+                        <div class="grass-block-3d block-right"></div>
+                    </div>
+                    <h1>Empire Legacy</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#server-info">Server Info</a></li>
+                    <li><a href="#news">Tin tức</a></li>
+                    <li><a href="#announcements">Thông báo</a></li>
+                    <li><a href="#features">Tính năng</a></li>
+                    <li><a href="#download">Tham gia</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Empire Legacy</h1>
+            <p class="hero-subtitle">Khám phá và xây dựng thế giới Minecraft cho riêng bạn</p>
+            <p class="hero-description">Tham gia cùng chúng tôi trong server Minecraft Chill này nhé</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Tham gia ngay</button>
+                <button class="btn btn-secondary">Xem trailer</button>
+            </div>
+            <div class="server-info">
+                <div class="server-ip">
+                    <span>IP Server:</span>
+                    <code>empirelegacy.online</code>
+                </div>
+                <div class="server-status">
+                    <span class="status-dot online"></span>
+                    <span>Online - 127/500 người chơi</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-blocks">
+            <div class="floating-block block-1"></div>
+            <div class="floating-block block-2"></div>
+            <div class="floating-block block-3"></div>
+        </div>
+    </section>
+
+    <!-- Server Info Section -->
+    <section id="server-info" class="server-info-section">
+        <div class="container">
+            <h2 class="section-title">Thông tin Server</h2>
+            <div class="server-details">
+                <div class="server-card main-server">
+                    <h3>🌱 Empire Legacy - Main Server</h3>
+                    <div class="server-ip-display">
+                        <label>Server IP:</label>
+                        <div class="ip-container">
+                            <code class="server-ip-text">empirelegacy.online</code>
+                            <button class="copy-btn" onclick="copyServerIP('empirelegacy.online')">📋</button>
+                        </div>
+                    </div>
+                    <div class="server-stats">
+                        <div class="stat">
+                            <span class="stat-label">Phiên bản:</span>
+                            <span class="stat-value" id="server-version">1.20.4</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Người chơi:</span>
+                            <span class="stat-value" id="player-count">
+                                <span class="loading-dots">Đang tải...</span>
+                            </span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Trạng thái:</span>
+                            <span class="stat-value" id="server-status">
+                                <span class="loading-dots">Kiểm tra...</span>
+                            </span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Ping:</span>
+                            <span class="stat-value" id="server-ping">
+                                <span class="loading-dots">---ms</span>
+                            </span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Uptime:</span>
+                            <span class="stat-value" id="server-uptime">99.8%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="server-card mini-games">
+                    <h3>🎮 Mini Games Server</h3>
+                    <div class="server-ip-display">
+                        <label>Server IP:</label>
+                        <div class="ip-container">
+                            <code class="server-ip-text">games.empirelegacy.online</code>
+                            <button class="copy-btn" onclick="copyServerIP('games.empirelegacy.online')">📋</button>
+                        </div>
+                    </div>
+                    <div class="mini-games-list">
+                        <span class="game-tag">SkyWars</span>
+                        <span class="game-tag">BedWars</span>
+                        <span class="game-tag">BuildBattle</span>
+                        <span class="game-tag">Parkour</span>
+                    </div>
+                </div>
+
+                <!-- Online Players Card -->
+                <div class="server-card online-players">
+                    <h3>👥 Người chơi Online</h3>
+                    <div class="players-list" id="online-players">
+                        <div class="loading-dots">Đang tải danh sách...</div>
+                    </div>
+                    <div class="players-stats">
+                        <small>Cập nhật lần cuối: <span id="last-update">---</span></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <div class="container">
+            <h2 class="section-title">📰 Tin tức mới nhất</h2>
+            <div class="news-grid">
+                <article class="news-card featured">
+                    <div class="news-image">
+                        <div class="news-placeholder">🌟</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">Cập nhật</span>
+                        <h3>Empire Legacy 2.0 - Bản cập nhật lớn</h3>
+                        <p>Chúng tôi vui mừng thông báo bản cập nhật lớn với nhiều tính năng mới: hệ thống quest, pet system, và khu vực PvP mới...</p>
+                        <div class="news-meta">
+                            <span class="news-date">23/07/2024</span>
+                            <span class="news-author">Admin RotY</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-content">
+                        <span class="news-category">Sự kiện</span>
+                        <h3>Cuộc thi xây dựng mùa hè</h3>
+                        <p>Tham gia cuộc thi xây dựng với chủ đề "Thành phố xanh" để nhận những phần thưởng hấp dẫn...</p>
+                        <div class="news-meta">
+                            <span class="news-date">20/07/2024</span>
+                            <span class="news-author">Mod Team</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-content">
+                        <span class="news-category">Thông báo</span>
+                        <h3>Bảo trì server định kỳ</h3>
+                        <p>Server sẽ được bảo trì vào 25/07/2024 từ 2:00 - 4:00 sáng để cải thiện hiệu suất...</p>
+                        <div class="news-meta">
+                            <span class="news-date">18/07/2024</span>
+                            <span class="news-author">Tech Team</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="news-pagination">
+                <button class="btn btn-secondary">Xem thêm tin tức</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section id="announcements" class="announcements-section">
+        <div class="container">
+            <h2 class="section-title">📢 Thông báo quan trọng</h2>
+            <div class="announcements-list">
+                <div class="announcement-card urgent">
+                    <div class="announcement-icon">🚨</div>
+                    <div class="announcement-content">
+                        <h3>Cảnh báo bảo mật</h3>
+                        <p>Không chia sẻ thông tin tài khoản với bất kỳ ai. Admin không bao giờ yêu cầu mật khẩu qua chat.</p>
+                        <span class="announcement-date">Cố định</span>
+                    </div>
+                </div>
+
+                <div class="announcement-card important">
+                    <div class="announcement-icon">⚡</div>
+                    <div class="announcement-content">
+                        <h3>Quy tắc server mới</h3>
+                        <p>Đã cập nhật quy tắc về PvP và griefing. Vui lòng đọc kỹ để tránh bị phạt.</p>
+                        <span class="announcement-date">22/07/2024</span>
+                    </div>
+                </div>
+
+                <div class="announcement-card info">
+                    <div class="announcement-icon">💡</div>
+                    <div class="announcement-content">
+                        <h3>Hướng dẫn cho người mới</h3>
+                        <p>Người chơi mới sẽ nhận được starter kit và được hướng dẫn bởi Helper Team.</p>
+                        <span class="announcement-date">20/07/2024</span>
+                    </div>
+                </div>
+
+                <div class="announcement-card event">
+                    <div class="announcement-icon">🎉</div>
+                    <div class="announcement-content">
+                        <h3>Sự kiện cuối tuần</h3>
+                        <p>Mỗi cuối tuần sẽ có sự kiện đặc biệt với phần thưởng độc quyền. Đừng bỏ lỡ!</p>
+                        <span class="announcement-date">19/07/2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Tính năng nổi bật</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Thế giới xanh</h3>
+                    <p>Khám phá những vùng đất xanh mướt với hệ sinh thái phong phú</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Hiệu suất cao</h3>
+                    <p>Server được tối ưu hóa để mang lại trải nghiệm mượt mà nhất</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Cộng đồng</h3>
+                    <p>Tham gia cộng đồng thân thiện với hàng nghìn người chơi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Mini Games</h3>
+                    <p>Đa dạng các trò chơi phụ hấp dẫn và thú vị</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Bắt đầu chơi</h2>
+            <div class="download-content">
+                <div class="download-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Tải Minecraft</h3>
+                        <p>Tải và cài đặt Minecraft Java Edition</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Kết nối Server</h3>
+                        <p>Sử dụng IP: play.empirelegacy.net</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Bắt đầu phiêu lưu</h3>
+                        <p>Khám phá thế giới Empire Legacy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Empire Legacy</h3>
+                    <p>Server Minecraft tốt nhất với chủ đề khối cỏ xanh mướt</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên kết</h3>
+                    <ul>
+                        <li><a href="#home">Trang chủ</a></li>
+                        <li><a href="#server-info">Server Info</a></li>
+                        <li><a href="#news">Tin tức</a></li>
+                        <li><a href="#announcements">Thông báo</a></li>
+                        <li><a href="#features">Tính năng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Discord: EmpireLegacy#1234</p>
+                    <p>Email: admin@empirelegacy.net</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Empire Legacy. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

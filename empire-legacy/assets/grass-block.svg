@@ -1,0 +1,32 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grassTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8BC34A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grassSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7D32;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Top face -->
+  <polygon points="8,16 32,16 36,12 12,12" fill="url(#grassTop)" stroke="#2E7D32" stroke-width="0.5"/>
+  
+  <!-- Left face -->
+  <polygon points="8,16 12,12 12,36 8,40" fill="url(#grassSide)" stroke="#2E7D32" stroke-width="0.5"/>
+  
+  <!-- Right face -->
+  <polygon points="32,16 36,12 36,36 32,40" fill="url(#grassSide)" stroke="#1B5E20" stroke-width="0.5"/>
+  
+  <!-- Front face -->
+  <rect x="8" y="16" width="24" height="24" fill="url(#grassSide)" stroke="#2E7D32" stroke-width="0.5"/>
+  
+  <!-- Grass texture on top -->
+  <rect x="10" y="13" width="2" height="1" fill="#66BB6A" opacity="0.8"/>
+  <rect x="14" y="13" width="2" height="1" fill="#66BB6A" opacity="0.8"/>
+  <rect x="18" y="13" width="2" height="1" fill="#66BB6A" opacity="0.8"/>
+  <rect x="22" y="13" width="2" height="1" fill="#66BB6A" opacity="0.8"/>
+  <rect x="26" y="13" width="2" height="1" fill="#66BB6A" opacity="0.8"/>
+  <rect x="30" y="13" width="2" height="1" fill="#66BB6A" opacity="0.8"/>
+</svg>
